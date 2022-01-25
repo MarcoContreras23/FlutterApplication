@@ -1,0 +1,7 @@
+{
+    "contactos" : [
+        {"nombres": "Miguel Ospina", "telefono": "234567899", "inicial": "M"},
+        {"nombres": "Samuel Ospina", "telefono": "7654345", "inicial": "S"},
+        {"nombres": "Emiliano Ospina", "telefono": "7876543", "inicial": "E"}
+    ]
+}
