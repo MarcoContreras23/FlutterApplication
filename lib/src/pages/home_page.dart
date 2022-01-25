@@ -59,6 +59,18 @@ class _HomePageState extends State<HomePage> {
             ),
             trailing: Icon(Icons.arrow_forward_ios),
           ),
+          ListTile(
+            title: Text("Favoritos"),
+            subtitle: Text("Listado favoritos"),
+            onTap: () {
+              Navigator.pushNamed(context, "favoritos");
+            },
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://previews.123rf.com/images/cowpland/cowpland1412/cowpland141200270/34978675-contactos-icono-dise%C3%B1o-plano-.jpg'),
+            ),
+            trailing: Icon(Icons.arrow_forward_ios),
+          ),
         ],
       ),
     );

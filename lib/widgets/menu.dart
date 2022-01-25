@@ -55,6 +55,13 @@ class _MenuState extends State<Menu> {
                   },
                 ),
                 ListTile(
+                  title: Text("Camara"),
+                  trailing: Icon(Icons.camera),
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, 'camara');
+                  },
+                ),
+                ListTile(
                   title: Text("Cerrar Sesión"),
                   trailing: Icon(Icons.logout),
                   onTap: () {

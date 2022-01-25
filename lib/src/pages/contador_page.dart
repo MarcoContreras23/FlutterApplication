@@ -14,7 +14,6 @@ class _ContadorPageState extends State<ContadorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Menu(),
       appBar: AppBar(
         title: Text('Pantalla Contador'),
       ),
