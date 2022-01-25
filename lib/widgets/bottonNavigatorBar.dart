@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/pages/favoritos_page.dart';
+import 'package:flutter_application_1/src/pages/opcion1.dart';
+import 'package:flutter_application_1/src/pages/opcion2.dart';
+import 'package:flutter_application_1/src/pages/screen_provider.dart';
+import 'package:provider/provider.dart';
 
 class BottonNavigator extends StatefulWidget {
   BottonNavigator({Key? key}) : super(key: key);
@@ -8,11 +13,17 @@ class BottonNavigator extends StatefulWidget {
 }
 
 class _BottonNavigatorState extends State<BottonNavigator> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final screens = Provider.of<ScreenCurrent>(context);
     return BottomNavigationBar(
-      currentIndex: 0,
-      onTap: (value) {},
+      currentIndex: _currentIndex,
+      onTap: (value) {
+        _currentIndex = value;
+        screens.screen = value;
+        setState(() {});
+      },
       items: [
         BottomNavigationBarItem(
             icon: Icon(Icons.ac_unit_sharp), label: 'Opción 1'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/provider/favoritos_provider.dart';
 import 'package:flutter_application_1/src/pages/opcion1.dart';
+import 'package:flutter_application_1/src/pages/screen_provider.dart';
 import 'package:flutter_application_1/widgets/bottonNavigatorBar.dart';
 import 'package:provider/provider.dart';
 
@@ -30,38 +31,35 @@ class _FavoritosPageState extends State<FavoritosPage> {
           //     icon: Icon(Icons.favorite))
         ],
       ),
-      body: _cuerpo(),
+      // expone el builder para leer la instancia del provider
+      body: Consumer<ScreenCurrent>(
+        builder: (context, current, child) {
+          switch (current.current) {
+            case 0:
+              return Opcion1();
+            case 1:
+              return Opcion2();
+            default:
+              return Opcion1();
+          }
+        },
+      ),
       bottomNavigationBar: BottonNavigator(),
     );
   }
+}
 
-  Widget _cuerpo() {
-    switch (_currentIndex) {
-      case 0:
-        return Opcion1();
-      case 1:
-        return Opcion2();
-      default:
-        return Opcion1();
-    }
+class Screens extends ChangeNotifier {
+  final List<int> _listScreen = [];
+
+  List<int> get index => _listScreen;
+
+  void screenView(int index) {
+    _listScreen.add(index);
+    notifyListeners();
   }
-
-  Widget _bottonNavigatorBar() {
-    return BottomNavigationBar(
-      currentIndex: _currentIndex,
-      onTap: (value) {
-        _currentIndex = value;
-        setState(() {});
-      },
-      items: [
-        BottomNavigationBarItem(
-            icon: Icon(Icons.ac_unit_sharp), label: 'Opción 1'),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.access_alarm_sharp), label: 'Opción 2')
-      ],
-    );
-  }
-
+}
+/*
   Widget _listaItems() {
     final favoritos = Provider.of<Favoritos>(context, listen: false);
 
@@ -83,5 +81,4 @@ class _FavoritosPageState extends State<FavoritosPage> {
         );
       },
     );
-  }
-}
+  }*/

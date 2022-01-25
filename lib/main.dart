@@ -11,6 +11,7 @@ import 'package:flutter_application_1/src/pages/list_favoritos_page.dart';
 import 'package:flutter_application_1/src/pages/login_page.dart';
 import 'package:flutter_application_1/src/pages/mapa_page.dart';
 import 'package:flutter_application_1/src/pages/qr_page.dart';
+import 'package:flutter_application_1/src/pages/screen_provider.dart';
 
 import 'package:provider/provider.dart';
 
@@ -32,23 +33,27 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final prefs = new PreferenciasUsuario();
 
-    return ChangeNotifierProvider<Favoritos>(
-        create: (context) => Favoritos(),
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          initialRoute: 'favoritos',
-          routes: {
-            "contador": (BuildContext context) => ContadorPage(),
-            "contactos": (BuildContext context) => ContactosPage(),
-            "contacto": (BuildContext context) => ContactoPage(),
-            "home": (BuildContext context) => HomePage(),
-            "login": (BuildContext context) => LoginPage(),
-            "mapa": (BuildContext context) => MapaPage(),
-            "qr": (BuildContext context) => QrPage(),
-            "camara": (BuildContext context) => CamaraPage(),
-            "favoritos": (BuildContext context) => FavoritosPage(),
-            "lista-favoritos": (BuildContext context) => ListaFavoritosPage(),
-          },
-        ));
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<Favoritos>(create: (context) => Favoritos()),
+        ChangeNotifierProvider<ScreenCurrent>(create: (context) => ScreenCurrent())
+      ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            initialRoute: 'favoritos',
+            routes: {
+              "contador": (BuildContext context) => ContadorPage(),
+              "contactos": (BuildContext context) => ContactosPage(),
+              "contacto": (BuildContext context) => ContactoPage(),
+              "home": (BuildContext context) => HomePage(),
+              "login": (BuildContext context) => LoginPage(),
+              "mapa": (BuildContext context) => MapaPage(),
+              "qr": (BuildContext context) => QrPage(),
+              "camara": (BuildContext context) => CamaraPage(),
+              "favoritos": (BuildContext context) => FavoritosPage(),
+              "lista-favoritos": (BuildContext context) => ListaFavoritosPage(),
+            },
+          ),
+    );
   }
 }
