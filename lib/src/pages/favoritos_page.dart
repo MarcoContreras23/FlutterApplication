@@ -3,6 +3,7 @@ import 'package:flutter_application_1/provider/favoritos_provider.dart';
 import 'package:flutter_application_1/src/pages/opcion1.dart';
 import 'package:flutter_application_1/src/pages/screen_provider.dart';
 import 'package:flutter_application_1/widgets/bottonNavigatorBar.dart';
+import 'package:flutter_application_1/widgets/menu.dart';
 import 'package:provider/provider.dart';
 
 import 'opcion2.dart';
@@ -20,6 +21,7 @@ class _FavoritosPageState extends State<FavoritosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Menu(),
       appBar: AppBar(
         title: Text("Provider"),
         actions: [

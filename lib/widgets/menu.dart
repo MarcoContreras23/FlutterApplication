@@ -62,6 +62,20 @@ class _MenuState extends State<Menu> {
                   },
                 ),
                 ListTile(
+                  title: Text("internet"),
+                  trailing: Icon(Icons.navigation_outlined),
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, 'internet');
+                  },
+                ),
+                ListTile(
+                  title: Text("form"),
+                  trailing: Icon(Icons.forum),
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, 'form');
+                  },
+                ),
+                ListTile(
                   title: Text("Cerrar Sesión"),
                   trailing: Icon(Icons.logout),
                   onTap: () {

@@ -6,7 +6,9 @@ import 'package:flutter_application_1/src/pages/contacto_page.dart';
 import 'package:flutter_application_1/src/pages/contactos_page.dart';
 import 'package:flutter_application_1/src/pages/contador_page.dart';
 import 'package:flutter_application_1/src/pages/favoritos_page.dart';
+import 'package:flutter_application_1/src/pages/form_page.dart';
 import 'package:flutter_application_1/src/pages/home_page.dart';
+import 'package:flutter_application_1/src/pages/internet_page.dart';
 import 'package:flutter_application_1/src/pages/list_favoritos_page.dart';
 import 'package:flutter_application_1/src/pages/login_page.dart';
 import 'package:flutter_application_1/src/pages/mapa_page.dart';
@@ -52,6 +54,8 @@ class _MyAppState extends State<MyApp> {
               "camara": (BuildContext context) => CamaraPage(),
               "favoritos": (BuildContext context) => FavoritosPage(),
               "lista-favoritos": (BuildContext context) => ListaFavoritosPage(),
+              "internet": (BuildContext context) => InternetPage(),
+              "Form": (BuildContext context) => FormPage(),
             },
           ),
     );

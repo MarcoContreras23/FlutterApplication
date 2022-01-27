@@ -71,6 +71,30 @@ class _HomePageState extends State<HomePage> {
             ),
             trailing: Icon(Icons.arrow_forward_ios),
           ),
+          ListTile(
+            title: Text("internet"),
+            subtitle: Text(" internet"),
+            onTap: () {
+              Navigator.pushNamed(context, "internet");
+            },
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://previews.123rf.com/images/cowpland/cowpland1412/cowpland141200270/34978675-contactos-icono-dise%C3%B1o-plano-.jpg'),
+            ),
+            trailing: Icon(Icons.arrow_forward_ios),
+          ),
+          ListTile(
+            title: Text("form"),
+            subtitle: Text(" form"),
+            onTap: () {
+              Navigator.pushNamed(context, "form");
+            },
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://previews.123rf.com/images/cowpland/cowpland1412/cowpland141200270/34978675-contactos-icono-dise%C3%B1o-plano-.jpg'),
+            ),
+            trailing: Icon(Icons.arrow_forward_ios),
+          ),
         ],
       ),
     );
